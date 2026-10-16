@@ -1,0 +1,15 @@
+Stage: post_diagnostic_raw_referto
+Model: sauerkrautlm-gemma-2-9b-it-i1
+Quantization: Q3_K_S
+Loaded context length: 8192
+Parallel slots: 1 (strictly sequential)
+Temperature: 0.2
+Max tokens: 16
+Threshold (binary decision on continuous risk): 0.5
+Sampling seed: not fixed (none available via this API)
+Request timeout: 120s
+Start (UTC): 2026-09-29T17:56:33.599354+00:00
+End (UTC): 2026-09-29T17:58:07.068924+00:00
+Elapsed: 93s
+n_total: 11
+n_unparseable_score: 0

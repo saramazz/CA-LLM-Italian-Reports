@@ -1,0 +1,3 @@
+stratum,n_patients,n_explicit_matches,n_disease_specific_matches,n_negated_matches,n_patients_with_negated_reference
+pre_diagnostic,91,98,27,1,1
+control_fixed,212,4,2,1,1

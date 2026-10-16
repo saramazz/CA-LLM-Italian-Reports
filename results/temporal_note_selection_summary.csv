@@ -1,0 +1,5 @@
+stratum,n_patients,n_notes,n_explicit_matches,n_investigation_matches,n_negated_matches,n_patients_with_negated_reference
+pre_diagnostic,166,166,178,54,6,6
+same_day,102,102,149,60,3,3
+post_diagnostic,152,152,378,125,11,11
+control_fixed,212,212,4,2,6,6

@@ -1,0 +1,4 @@
+arm,nb_exceeds_screen_all_up_to_pt,nb_exceeds_screen_all_status,nb_exceeds_screen_none_up_to_pt,nb_exceeds_screen_none_status,grid_lo,grid_hi
+zero_shot__medgemma-27b-text-it,,never_exceeds_within_grid,0.04950259067357514,crosses_within_grid,0.01,0.2
+B5_gold_21_features,,always_exceeds_within_grid,0.06403098474016156,crosses_within_grid,0.01,0.2
+B5b_gold_21_plus_explicit,,always_exceeds_within_grid,0.1581278809527341,crosses_within_grid,0.01,0.2

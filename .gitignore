@@ -1,0 +1,10 @@
+# Patient data, patient-level intermediates and local configuration are never versioned.
+# (No trailing slash, so symbolic links to the data folders are ignored too.)
+database
+saved_results
+work
+analysis/_*
+!analysis/_patient_ids.example.py
+.env
+__pycache__/
+*.pyc

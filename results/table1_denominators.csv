@@ -1,0 +1,19 @@
+variable,header_n_CA,row_denominator_CA,n_missing_CA,header_n_nonCA,row_denominator_nonCA,n_missing_nonCA,denominator_differs_from_header,pct_basis,note
+Age (years),204,203,1,213,213,0,True,complete_cases,
+Ejection fraction (%),204,202,2,213,213,0,True,complete_cases,"source: casi_controlli.csv registry EF column, not the gold-annotation placeholder column"
+NT-proBNP (pg/mL),204,204,0,213,213,0,False,stated_header_n,
+NYHA class,204,199,5,213,208,5,True,complete_cases,"0-coded rows treated as 'class not recorded', denominators 199/208"
+NYHA class 1 (% of 199/208 recorded),204,199,5,213,208,5,True,complete_cases,"n=44/199 CA, 83/208 non-CA"
+NYHA class 2 (% of 199/208 recorded),204,199,5,213,208,5,True,complete_cases,"n=88/199 CA, 63/208 non-CA"
+NYHA class 3 (% of 199/208 recorded),204,199,5,213,208,5,True,complete_cases,"n=59/199 CA, 35/208 non-CA"
+NYHA class 4 (% of 199/208 recorded),204,199,5,213,208,5,True,complete_cases,"n=8/199 CA, 8/208 non-CA"
+Male sex,204,204,0,213,213,0,False,stated_header_n,
+Hypertension,204,204,0,213,213,0,False,stated_header_n,
+Dyslipidaemia,204,204,0,213,213,0,False,stated_header_n,
+Diabetes,204,204,0,213,213,0,False,stated_header_n,casi column 'Diabete' / controlli column 'Diabetico'
+COPD,204,204,0,213,213,0,False,stated_header_n,
+Atrial fibrillation,204,204,0,213,213,0,False,stated_header_n,
+Sinus rhythm,204,204,0,213,213,0,False,stated_header_n,
+Pacemaker,204,204,0,213,213,0,False,stated_header_n,
+LBBB,204,204,0,213,213,0,False,stated_header_n,
+RBBB,204,204,0,213,213,0,False,stated_header_n,

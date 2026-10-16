@@ -1,0 +1,3 @@
+file,model_name_as_used,n_rows,n_overlap_with_gold,full_cohort_macro_f1,full_cohort_micro_f1,common_cohort_n,common_cohort_macro_f1,common_cohort_micro_f1
+llm_annotations_Qwen2.5-7B-Instruct.csv,Qwen2.5-7B-Instruct,434,432,0.4024445033420908,0.6037735849056604,77,0.4288265789815121,0.6368563685636857
+llm_annotations_qwen2.5-7b-instruct.csv,qwen2.5-7b-instruct,432,430,0.36387431627504185,0.5576969992681142,77,0.36718892047098994,0.5662337662337662

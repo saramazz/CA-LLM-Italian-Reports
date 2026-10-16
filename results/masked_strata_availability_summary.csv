@@ -1,0 +1,5 @@
+stratum,n_patients_masked_text_available,already_scored_by_a_model,n_masked_spans_total,n_explicit_matches_total
+pre_diagnostic,91,True,126.0,98.0
+same_day,102,False,209.0,149.0
+post_diagnostic,11,False,22.0,19.0
+control_fixed,212,True,,

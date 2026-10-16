@@ -1,0 +1,16 @@
+model,n_patients,macro_f1,micro_f1,key,arm
+spacy,77,0.6020508793866985,0.7869318181818182,spacy,reference
+gpt-4.1,77,0.608598701747193,0.7605633802816901,gpt-4.1,proprietary
+gpt-4.1-mini,77,0.5960246481308382,0.7450980392156863,gpt-4.1-mini,proprietary
+gpt-4o,77,0.5725476265889011,0.7406340057636888,gpt-4o,proprietary
+medgemma-27b-text-it,77,0.5661500856242307,0.7156726768377254,medgemma-27b-text-it,local
+sauerkrautlm-gemma-2-9b-it-i1,77,0.5593343059092272,0.662303664921466,sauerkrautlm-gemma-2-9b-it-i1,local
+deepseek-r1-distill-qwen-7b,77,0.3741782708793821,0.5907172995780591,deepseek-r1-distill-qwen-7b,local
+qwen2.5-7b-instruct,77,0.3671889204709899,0.5662337662337662,qwen2.5-7b-instruct,local
+mmed-llama-3-8b,77,0.2744901138510667,0.464075382803298,mmed-llama-3-8b,local
+llama-3-8b-ultramedical,77,0.2614215546925084,0.4256198347107438,llama-3-8b-ultramedical,local
+phi-4-mini-instruct,77,0.3165966806571432,0.4143589743589743,phi-4-mini-instruct,local
+openbiollm-llama3-8b,77,0.1471655274671191,0.3025,openbiollm-llama3-8b,local
+meditron-7b,77,0.0324580067189249,0.0803782505910165,meditron-7b,local
+meta-llama-3-8b,77,0.038143822351259,0.0752941176470588,meta-llama-3-8b,local
+biomistral-7b,77,0.0,0.0,biomistral-7b,local
