@@ -16,6 +16,17 @@ protected under the GDPR and are not distributed.
 | `results/` | Aggregate outputs (metrics, counts, confidence intervals, run parameter logs) |
 | `results/figures/` | Figures 2–4 and the supplementary scatter figure |
 
+## Extraction and zero-shot
+
+| Script in `extraction/` | Content |
+|---|---|
+| `llm_extract_proprietary.py`, `llm_extract_local.py` | Extraction of the 21 variables (OpenAI API / LM Studio) |
+| `llm_extract_iterative.py` | Iterative arm, one GPT-4o call per variable |
+| `zero_shot_classification.py` | Zero-shot classification (binary prompt and continuous risk score) |
+| `extraction_scoring.py` | Per-label scoring against the gold standard |
+
+These scripts write per-patient outputs under `database/` and `saved_results/`.
+
 ## Analyses
 
 | Topic | Script(s) in `analysis/` |
@@ -28,7 +39,10 @@ protected under the GDPR and are not distributed.
 | Paired comparisons, calibration, decision curves, predictive values | `paired_comparisons.py`, `paired_comparisons_harmonised.py`, `calibration.py`, `decision_curve.py`, `predictive_values.py`, `confusion_auprc.py` |
 | Matched analysis | `matched_analysis.py` |
 | Leakage-controlled evaluation | `leakage_spec.py` (masking term lists and strata), `cohort_temporal.py`, `explicit_term_flag.py`, `note_selection_temporal.py`, `notes_primary_endpoint.py`, `notes_masked_temporal.py`, `notes_masked_lexical.py`, `inference_primary_endpoint.py`, `inference_strata.py`, `metrics_primary_endpoint.py`, `metrics_strata.py` |
-| Figures | `figure2.py`, `figure3.py`, `figure4.py` |
+| Figures | `figure2.py`, `figure3.py`, `figure4.py` (helpers in `figure_helpers.py`) |
+
+`masking.py` is an earlier implementation of the masking patterns, used only for note
+selection; all masked text analysed is produced with `leakage_spec.mask_text`.
 
 Each script states in its header what it computes. Its outputs are written to `results/`
 (aggregate) or `work/` (patient-level, not versioned).
@@ -39,10 +53,17 @@ Each script states in its header what it computes. Its outputs are written to `r
 - The original data are expected in `database/` and the cached model outputs in
   `saved_results/`. Neither is distributed.
 - Copy `analysis/_patient_ids.example.py` to `analysis/_patient_ids.py`.
+- Order: the scripts that build intermediate files come first —
+  `cohort_temporal.py`, `explicit_term_flag.py`, `note_selection_temporal.py`, the three
+  `notes_*.py`, `gold_rebuild.py`, `redflag_dictionary.py` — then inference
+  (`inference_*.py`), then metrics, classification, baselines and paired comparisons
+  (`paired_comparisons.py` before `predictive_values.py`, `calibration.py` and
+  `matched_analysis.py`), and the figures last.
 - Proprietary models read the API key from the `OPENAI_API_KEY` environment variable.
 - Local models are served with LM Studio (OpenAI-compatible endpoint, default
   `http://localhost:1234`). Set `LMSTUDIO_URL` and `LMSTUDIO_MODEL` for
-  `extraction/llm_extract_local.py` and `analysis/inference_strata.py`. For
+  `extraction/llm_extract_local.py` and `analysis/inference_strata.py`;
+  `analysis/inference_primary_endpoint.py` takes `<model> <max_tokens> <server>` as arguments. For
   `extraction/zero_shot_classification.py` with a local model, set
   `OPENAI_BASE_URL=<server>/v1` and any non-empty `OPENAI_API_KEY`. Quantisation and settings
   of every run are in `results/inference_params_log_*.txt`.
