@@ -10,7 +10,7 @@ from sklearn.metrics import average_precision_score, confusion_matrix, f1_score,
 sys.path.insert(0, "analysis")
 from baselines import AMBIGUOUS_IDS  # noqa: E402
 
-REC = "analysis"
+REC = "work"
 OUT = "results/masked_five_strata_complete.csv"
 PRED_DIR = "saved_results/llm_zero_shot_prediction"
 N_BOOT, SEED, THR = 2000, 82, 0.5

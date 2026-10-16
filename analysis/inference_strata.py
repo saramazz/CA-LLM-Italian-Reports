@@ -27,7 +27,7 @@ PRIMARY_NOTES = "work/_primary_endpoint_notes.csv"
 TEMPORAL_NOTES = "work/_all_temporal_strata_notes_current_spec.csv"
 LEXICAL_NOTES = "work/_lexical_arm_masked_current_spec.csv"
 
-OUT_DIR = "analysis"
+OUT_DIR = "work"
 os.makedirs(OUT_DIR, exist_ok=True)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")

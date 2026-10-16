@@ -16,7 +16,7 @@ from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
 NOTES_PATH = "work/_primary_endpoint_notes.csv"  # gitignored
-OUT_DIR = "analysis"  # gitignored outputs (patient-level scores)
+OUT_DIR = "work"  # gitignored outputs (patient-level scores)
 TEMPERATURE = 0.2
 MAX_WORKERS = 1  # sequential: concurrent requests caused an LM Studio decode failure
 # ("failed to decode, ret = 1") that left the model stuck (not responding at all,

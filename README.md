@@ -23,7 +23,7 @@ protected under the GDPR and are not distributed.
 | Table 1 denominators | `table1_denominators.py` |
 | Extraction performance | `extraction_metrics.py`, `extraction_metrics_ef_nyha.py`, `gold_rebuild.py` |
 | Classification from extracted variables | `classification_harmonised.py` |
-| Baselines B1–B5b | `baselines.py`, `baselines_full_metrics.py` |
+| Baselines B1–B5b | `redflag_dictionary.py`, `baselines.py`, `baselines_full_metrics.py` |
 | Zero-shot at the 0.5 threshold | `zero_shot_threshold.py`, `zero_shot_threshold_table.py` |
 | Paired comparisons, calibration, decision curves, predictive values | `paired_comparisons.py`, `paired_comparisons_harmonised.py`, `calibration.py`, `decision_curve.py`, `predictive_values.py`, `confusion_auprc.py` |
 | Matched analysis | `matched_analysis.py` |
