@@ -190,10 +190,14 @@ def main():
                label="Mean extraction F1")
     ax.set_yticks(yy, [f"{LABEL_NAMES[l]} (n={int(sup[l])})" for l in labs], fontsize=8)
     ax.set_xlim(0, 1.02); ax.tick_params(axis="x", labelsize=8)
-    ax.set_xlabel("Extraction F1, positive class (markers); importance rescaled to max 1 (bars)",
+    ax.set_xlabel("Extraction F1, positive class (markers)\nFeature importance, rescaled to max 1 (bars)",
                   fontsize=8.5)
     ax.grid(axis="x", color="0.92", lw=0.5); ax.set_axisbelow(True)
-    ax.legend(fontsize=6.5, loc="upper center", bbox_to_anchor=(0.5, -0.07), ncol=3, frameon=False)
+    # Legend anchored to the figure, not the axes: the long row labels shift the axes to the
+    # right, and an axes-centred legend ran past the right edge of the 7-inch figure.
+    handles, labels = ax.get_legend_handles_labels()
+    fig.legend(handles, labels, fontsize=6.5, loc="outside lower center", ncol=3, frameon=False)
+    fig.get_layout_engine().set(rect=(0.0, 0.0, 0.975, 1.0))  # keep a right margin for the last tick
     out = os.path.join(OUT_DIR, "figure4")
     _save(fig, out)
 
