@@ -41,8 +41,11 @@ Each script states in its header what it computes. Its outputs are written to `r
 - Copy `analysis/_patient_ids.example.py` to `analysis/_patient_ids.py`.
 - Proprietary models read the API key from the `OPENAI_API_KEY` environment variable.
 - Local models are served with LM Studio (OpenAI-compatible endpoint, default
-  `http://localhost:1234`); quantisation and settings of every run are in
-  `results/inference_params_log_*.txt`.
+  `http://localhost:1234`). Set `LMSTUDIO_URL` and `LMSTUDIO_MODEL` for
+  `extraction/llm_extract_local.py` and `analysis/inference_strata.py`. For
+  `extraction/zero_shot_classification.py` with a local model, set
+  `OPENAI_BASE_URL=<server>/v1` and any non-empty `OPENAI_API_KEY`. Quantisation and settings
+  of every run are in `results/inference_params_log_*.txt`.
 
 ## Licence
 

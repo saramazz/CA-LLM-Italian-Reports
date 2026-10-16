@@ -314,7 +314,6 @@ logger.info("Starting performance evaluation for all models...")
 # print the models
 logger.info(f"Models to evaluate: {models}")
 
-input("Press Enter to continue...")
 
 for model in models:
     print("Evaluating performance for model:", model)

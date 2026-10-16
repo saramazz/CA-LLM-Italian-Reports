@@ -213,13 +213,13 @@ retries = Retry(total=3, backoff_factor=0.3, status_forcelist=[500, 502, 503, 50
 session.mount("http://", HTTPAdapter(max_retries=retries))
 
 # Base URL of your local LM Studio server
-base_url = "http://localhost:1234"
+base_url = os.environ.get("LMSTUDIO_URL", "http://localhost:1234")
 
 # --------------------
 # CHANGE MODEL HERE to switch the LM used for inference
 
 
-model = "deepseek-r1-distill-qwen-7b"
+model = os.environ.get("LMSTUDIO_MODEL", "deepseek-r1-distill-qwen-7b")
 # model = "phi-4-mini-instruct"
 # model = "sauerkrautlm-gemma-2-9b-it-i1"  # fast
 # model = "qwen2.5-7b-instruct"

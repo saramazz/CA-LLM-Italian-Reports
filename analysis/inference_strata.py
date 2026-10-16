@@ -18,7 +18,7 @@ from requests.packages.urllib3.util.retry import Retry
 
 MODEL = os.environ.get("LMSTUDIO_MODEL", "qwen2.5-7b-instruct")
 QUANTIZATION = os.environ.get("LMSTUDIO_QUANT", "Q4_K_M")
-BASE_URL = "http://localhost:1234"
+BASE_URL = os.environ.get("LMSTUDIO_URL", "http://localhost:1234")
 TEMPERATURE = 0.2
 MAX_TOKENS = 16
 TIMEOUT = 120
